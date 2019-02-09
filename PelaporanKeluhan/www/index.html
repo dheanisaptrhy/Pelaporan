@@ -1,0 +1,178 @@
+<!DOCTYPE html>
+<html>
+<head>
+ <title>Aplikasi Pelaporan FILKOM</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+ <meta http-equiv="content-Security-Policy" content="default-src*; style-src*'unsafe-inline'; script-src*'unsafe-inline';media-src*">
+  <link rel="stylesheet" href="http://code.jquery.com/mobile/1.4.5/jquery.mobile-1.4.5.min.css" />
+  <script src="http://code.jquery.com/jquery-2.1.1.js"></script>
+  <script src="http://code.jquery.com/mobile/1.4.5/jquery.mobile-1.4.5.min.js"></script>
+ <style>
+ html, body {
+            height: 100%;
+            margin: 0;
+            padding: 0;
+   /*overflow: hidden;*/
+        }
+        img {
+            width: 100%;
+            height: 100%;
+            max-height: 100%;
+            margin: 0;
+            padding: 0;
+            background-image: url('https://pbs.twimg.com/media/DYLhpbZUMAA5tGn.png');
+            background-size:100% 100%;
+            background-repeat: no-repeat;
+        }
+ </style>
+</head>
+<body>
+
+<!-- page awal -->
+<div data-role="page" id="page-one" data-theme="a">
+ <div data-role="header">
+  <h1>Pelaporan Filkom</h1>
+  <a href="#page-two" data-role="button" data-theme="b">Sign In</a>
+ </div>
+ <div role="main" class="ui-content">
+  <img src="https://pbs.twimg.com/media/DYLhpbZUMAA5tGn.png">
+ </div>
+</div>
+
+<!-- page login -->
+<div data-role="page" id="page-two" data-theme="a">
+  <div data-role="header">
+  <a href="#page-one" data-role="button" data-theme="b" data-icon="back">Back</a>
+  <h1>Login</h1>
+  </div>
+  <div role="content" class="ui-content" data-theme="b">
+  <form method="POST" action="index.html">
+    <div data-role="fieldcontain">
+      <label for = "nim">NIM : </label>
+      <input type="text" name="nim" id="nim" class="ui-input-text ui-body-c ui-corner-all ui-shadow-inset" required />
+    </div>
+    <div data-role="fieldcontain">
+      <label for = "pass">Password : </label>
+      <input type="Password" name="pass" id="pass" class="ui-input-text ui-body-c ui-corner-all ui-shadow-inset" required/><br>
+    </div>
+    <div data-role="fieldcontain">
+      <input type="submit" value="Login" name="login "id="login"/>
+    </div>
+  </form>
+  </div>
+</div>
+
+<!-- page daftar -->
+<div data-role="page" id="page-three" data-theme="a">
+ <div data-role="header">
+  <a href="#page-one" data-role="button" data-theme="c" id="logout">Logout</a>
+  <h1>Form Pelaporan Filkom</h1>
+ </div>
+ <div role="content" class="ui-content">
+    <form method="POST" action="index.html">
+      <div data-role="fieldcontain">
+        <label for = "nim">NIM : </label>
+        <input type="text" name="name" id="nim-a" value="" class="ui-input-text ui-body-c ui-center-all ui-shadow-inset">
+      </div>
+      <div data-role="fieldcontain">
+        <label for = "nama">Nama : </label>
+        <input type="text" name="name" id="nama-a" value="" class="ui-input-text ui-body-c ui-corner-all ui-shadow-inset">
+      </div>
+      <div data-role="fieldcontain">
+        <label for="Tujuanq" >Ditujukan Kepada :</label>
+        <select name="tujuan" id="tujuan">
+            <option>Pilih :</option>
+            <option value="Mahasiswa">Mahasiswa</option>
+            <option value="Dosen">Dosen</option>
+            <option value="Staff Filkom">Staff Filkom</option>
+            <option value="Tidak Tahu">Tidak Tahu</option>
+        </select>
+      </div>
+      <div data-role="fieldcontain">
+        <label for="keluhan" >Keluhan :</label>
+        <input type="text" name="keluh" id="keluh" value="" class="ui-input-text ui-body-c ui-corner-all ui-shadow-inset"><br>
+      </div>
+      <div data-role="fieldcontain">
+        <input type="reset" value="Reset" id="reset" data-inline="true"/>
+        <input type="submit" value="Submit" name="submit" id="submit" data-inline="true"/>
+      </div>
+    </form>
+ </div>
+</div>
+
+<!-- page terimakasih -->
+<div data-role="page" id="page-four" data-theme="a">
+ <div data-role="header">
+  <!-- <a href="#page-one" data-role="button" data-theme="c">Logout</a> -->
+  <h1>Form Pelaporan Filkom</h1>
+ </div>
+ <div role="main" class="ui-content">
+  <label>Terimakasih atas keluhannya :)</label>
+  <a href="#page-three" data-role="button" data-theme="c" data-inline="true">Tambah Respon lagi</a>
+  <a href="#page-one" data-role="button" data-theme="c" data-inline="true" id="logout">Logout</a>
+ </div>
+</div>
+
+<!-- page admin awal -->
+<div data-role="page" id="page-admin" data-theme="b">
+ <div data-role="header">
+  <a href="#page-one" data-role="button" data-theme="d" id="logout">Logout</a>
+  <h1>Daftar Pelapor Filkom</h1>
+ </div>
+ <div role="main" class="ui-content">
+  <a href="#page-isi" data-role="button" data-theme="c" id="tekan">Lihat detail</a><br>
+  <a href="#page-ganti" data-role="button" data-theme="c" id="tekan">Edit Password</a>
+</div>
+</div>
+
+<!-- page admin isian -->
+<div data-role="page" id="page-isi" data-theme="b">
+ <div data-role="header">
+  <a href="#page-one" data-role="button" data-theme="c" data-inline="true" id="logout">Logout</a>
+  <a href="#page-admin" data-role="button" data-icon="back" data-theme="c" data-inline="true">back</a>
+  <h1>Detail Pelapor Filkom</h1>
+ </div>
+ <div role="main" class="ui-content">
+<table data-role="table" data-mode="listview" data-inset="true" id="table-detailMhs">
+ <thead>
+  <tr>
+   <th data-priority="1">NIM</th>
+   <th data-priority="2">Nama</th>
+   <th data-priority="4">Tertuju kepada : </th>  
+   <th data-priority="5">Permasalahan</th>
+  </tr>
+ </thead>
+ <tbody>
+ </tbody>
+</table>
+ </div>
+</div>
+
+<!-- page edit profil admin -->
+<div data-role="page" id="page-ganti" data-theme="b">
+  <div data-role="header">
+    <a href="#page-admin" data-role="button" data-theme="b" data-icon="back">Back</a>
+    <a href="#page-one" data-role="button" data-theme="c" data-inline="true" id="logout">Logout</a>
+    <h1>Edit Password</h1>
+  </div>
+  <div role="main" class="ui-content">
+  <form method="POST" action="index.html">
+    <div data-role="fieldcontain">
+      <label for = "pass">New Password : </label>
+      <input type="Password" name="newpass" id="newpass" class="ui-input-text ui-body-c ui-corner-all ui-shadow-inset" />
+    </div>
+      <div data-role="fieldcontain">
+      <label for = "pass">re-Type New Password : </label>
+      <input type="Password" name="renewpass" id="renewpass" class="ui-input-text ui-body-c ui-corner-all ui-shadow-inset" />
+    </div>
+    <div data-role="fieldcontain">
+        <input type="submit" value="Submit" name="save" id="save"/>
+      </div>
+  </form>
+</div>
+</div>
+
+<script src="js/script.js" type="text/javascript"></script>
+  <script> Application.initApplication(); </script>
+</body>
+</html>
